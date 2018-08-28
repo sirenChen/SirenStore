@@ -1,4 +1,4 @@
-package web.servlet;
+package controller;
 
 import core.BaseServlet;
 import core.MyBeanFactory;
