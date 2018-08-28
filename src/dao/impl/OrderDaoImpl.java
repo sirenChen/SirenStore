@@ -36,7 +36,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public void insertOrderItem(OrderItem orderItem) throws SQLException {
-        String sql = "INSERT INTO orderItem (ooid, quantity, subtotal, pid, oid) VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO order_item (ooid, quantity, subtotal, pid, oid) VALUES (?,?,?,?,?)";
 
         QueryRunner qr = new QueryRunner();
         qr.update(DataSourceUntil.getConnection(),sql, orderItem.getOoid(), orderItem.getQuantity(),
@@ -62,7 +62,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public List<OrderItem> findOrderItemByOrder(Order order) throws SQLException, InvocationTargetException, IllegalAccessException {
-        String sql = "SELECT * FROM orderItem oi, product p WHERE oi.pid = p.pid AND oi.oid=?";
+        String sql = "SELECT * FROM order_item oi, product p WHERE oi.pid = p.pid AND oi.oid=?";
 
         QueryRunner qr = new QueryRunner(DataSourceUntil.getDataSource());
 
