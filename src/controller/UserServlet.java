@@ -73,7 +73,7 @@ public class UserServlet extends BaseServlet {
 
         uService.register(user);
 
-        request.setAttribute("msg", "Thanks, please check your Email to active your account!!!");
+        request.setAttribute("msg", "Thanks...");
         return "/jsp/msg.jsp";
     }
 
